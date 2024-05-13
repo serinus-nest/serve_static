@@ -1,0 +1,12 @@
+name: serinus_serve_static
+description: "A Serinus Plugin to serve static files in a Serinus Application"
+version: 0.1.0
+repository: https://github.com/serinus-nest/serve_static
+
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  serinus: 0.2.3
+  
