@@ -10,9 +10,13 @@ import 'serve_static_controller.dart';
 /// You can also use the constructor to initialize any dependencies that your plugin may have.
 class ServeStaticModule extends Module {
 
+  /// The [options] property contains the options of the module.
   final ServeStaticModuleOptions? options;
+
+  /// The [userDefinedGuards] property contains the user defined guards of the module.
   final List<Guard> userDefinedGuards;
-  
+
+  /// The [ServeStaticModule] constructor is used to create a new instance of the [ServeStaticModule] class.
   ServeStaticModule({
     this.userDefinedGuards = const [],
     this.options
@@ -22,24 +26,28 @@ class ServeStaticModule extends Module {
   List<Guard> get guards => userDefinedGuards;
 
   @override
-  Future<Module> registerAsync() async {
+  Future<Module> registerAsync(ApplicationConfig config) async {
     final moduleOptions = options ?? ServeStaticModuleOptions();
     final serveStaticController = ServeStaticController(
       path: moduleOptions.path,
       extensionsBlacklist: moduleOptions.extensionsBlacklist
     );
-    controllers.add(serveStaticController);
+    controllers = [serveStaticController];
     return this;
   }
 
 }
 
+/// The [ServeStaticModuleOptions] class is used to create the options of the serve static module.
 class ServeStaticModuleOptions extends ModuleOptions{
 
+  /// The [path] property contains the path of the module.
   final String path;
 
+  /// The [extensionsBlacklist] property contains the extensions blacklist of the module.
   final List<String> extensionsBlacklist;
 
+  /// The [ServeStaticModuleOptions] constructor is used to create a new instance of the [ServeStaticModuleOptions] class.
   ServeStaticModuleOptions({
     this.path = '/public',
     this.extensionsBlacklist = const []
