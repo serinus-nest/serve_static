@@ -2,13 +2,7 @@ import 'package:serinus/serinus.dart';
 import 'package:serinus_serve_static/serinus_serve_static.dart';
 
 class AppModule extends Module {
-
-  AppModule(): super(
-    imports: [
-      ServeStaticModule()
-    ]
-  );
-
+  AppModule() : super(imports: [ServeStaticModule()]);
 }
 
 Future<void> main() async {
@@ -16,5 +10,4 @@ Future<void> main() async {
     entrypoint: AppModule(),
   );
   await app.serve();
-
 }
