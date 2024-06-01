@@ -30,7 +30,7 @@ class ServeStaticModule extends Module {
     final moduleOptions = options ?? ServeStaticModuleOptions();
     final serveStaticController = ServeStaticController(
       path: moduleOptions.path,
-      extensionsBlacklist: moduleOptions.extensionsBlacklist
+      extensions: moduleOptions.extensions
     );
     controllers = [serveStaticController];
     return this;
@@ -44,13 +44,13 @@ class ServeStaticModuleOptions extends ModuleOptions{
   /// The [path] property contains the path of the module.
   final String path;
 
-  /// The [extensionsBlacklist] property contains the extensions blacklist of the module.
-  final List<String> extensionsBlacklist;
+  /// The [extensions] property contains the extensions whitelist of the module.
+  final List<String> extensions;
 
   /// The [ServeStaticModuleOptions] constructor is used to create a new instance of the [ServeStaticModuleOptions] class.
   ServeStaticModuleOptions({
     this.path = '/public',
-    this.extensionsBlacklist = const []
+    this.extensions = const []
   });
 
 }

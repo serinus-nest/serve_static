@@ -7,17 +7,17 @@ class ServeRouteGet extends Route {
 }
 
 class ServeStaticController extends Controller {
-  final List<String> extensionsBlacklist;
+  final List<String> extensions;
 
   ServeStaticController({
     required super.path,
-    this.extensionsBlacklist = const [],
+    this.extensions = const [],
   }) {
     on(ServeRouteGet(), (context) async {
       final path = context.request.path;
-      if(extensionsBlacklist.isNotEmpty){
-        for(var extension in extensionsBlacklist){
-          if(path.endsWith(extension)){
+      if(extensions.isNotEmpty){
+        for(var extension in extensions){
+          if(!path.endsWith(extension)){
             throw ForbiddenException(message: 'The files with extension $extension are not allowed to be served');
           }
         }
