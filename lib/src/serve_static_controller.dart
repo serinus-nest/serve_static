@@ -3,14 +3,14 @@ import 'dart:io';
 import 'package:serinus/serinus.dart';
 
 /// The [ServeRouteGet] class is used to create a new instance of the serve route get.
-/// 
+///
 /// The route is a wildcard route that serves all the requests.
 class ServeRouteGet extends Route {
   const ServeRouteGet({super.path = '/*', super.method = HttpMethod.get});
 }
 
 /// The [ServeStaticController] class is used to create a new instance of the serve static controller.
-/// 
+///
 /// This controller is used to serve static files from the current directory.
 class ServeStaticController extends Controller {
   /// The [extensions] property contains the extensions whitelist of the controller.

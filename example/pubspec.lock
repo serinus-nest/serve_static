@@ -105,6 +105,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.3.0"
+  serinus_serve_static:
+    dependency: "direct main"
+    description:
+      name: serinus_serve_static
+      sha256: def8892c4b27bb3e8fd13f5cbf8d0a6f5e2b955080188c4eff6623c986b39ae8
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   source_span:
     dependency: transitive
     description:

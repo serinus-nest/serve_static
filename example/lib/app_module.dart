@@ -5,15 +5,10 @@ import 'app_controller.dart';
 import 'app_provider.dart';
 
 class AppModule extends Module {
-  AppModule() : super(
-    imports: [
-      ServeStaticModule()
-    ],
-    controllers: [
-      AppController()
-    ],
-    providers: [
-      AppProvider()
-    ],
-  );
+  AppModule()
+      : super(
+          imports: [ServeStaticModule()],
+          controllers: [AppController()],
+          providers: [AppProvider()],
+        );
 }
