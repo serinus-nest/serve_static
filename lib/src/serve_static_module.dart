@@ -12,15 +12,9 @@ class ServeStaticModule extends Module {
   /// The [options] property contains the options of the module.
   final ServeStaticModuleOptions? options;
 
-  /// The [userDefinedGuards] property contains the user defined guards of the module.
-  final List<Guard> userDefinedGuards;
-
   /// The [ServeStaticModule] constructor is used to create a new instance of the [ServeStaticModule] class.
-  ServeStaticModule({this.userDefinedGuards = const [], this.options})
+  ServeStaticModule({this.options})
       : super(options: options);
-
-  @override
-  List<Guard> get guards => userDefinedGuards;
 
   @override
   Future<Module> registerAsync(ApplicationConfig config) async {
